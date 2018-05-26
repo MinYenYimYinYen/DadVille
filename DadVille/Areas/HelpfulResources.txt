@@ -10,3 +10,6 @@ update-database -configuration DadVille.Areas.Cover.Models.Migrations.Configurat
 180506 - NoteToSelf: Added AddOrUpdate Static Class, for seeding and for production.
 	Whenever I add properties to a class, I have to update this or it won't function, and it
 	won't throw an exception.
+
+180526 - Attempting to integrate this project into GitHub.  Morale is low because internet is slow. 
+	But maybe I'll be able to push this message.
