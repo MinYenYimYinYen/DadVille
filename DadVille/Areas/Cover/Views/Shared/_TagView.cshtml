@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Cover.Tag>
+
+<table>
+	<tr>
+		<td>Tag</td>
+	</tr>
+	@foreach(var t in Model)
+	{
+		<tr>
+			<td>@t.Name</td>
+		</tr>
+	}
+</table>
+

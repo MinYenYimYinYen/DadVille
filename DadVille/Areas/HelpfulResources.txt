@@ -1,0 +1,12 @@
+﻿https://www.codeproject.com/Tips/801628/Code-First-Migration-in-Multiple-DbContext
+
+add-migration -configuration DadVille.Areas.Crypto.Migrations.Configuration
+
+add-migration -configuration DadVille.Areas.Cover.Models.Migrations.Configuration
+update-database -configuration DadVille.Areas.Cover.Models.Migrations.Configuration
+
+180506 - NoteToSelf: Added seed method to run in Global.asax.cs so I could debug seeding.
+
+180506 - NoteToSelf: Added AddOrUpdate Static Class, for seeding and for production.
+	Whenever I add properties to a class, I have to update this or it won't function, and it
+	won't throw an exception.
