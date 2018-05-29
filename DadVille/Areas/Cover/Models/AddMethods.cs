@@ -106,40 +106,40 @@ namespace DadVille.Areas.Cover.Models
 		#endregion
 
 		#region ManyToMany
-		public static bool Tag_Song(Tag tag, Song song)
-		{
-			var existingTag = db.Tags.Where(t => t.Name == tag.Name).SingleOrDefault();
-			if (existingTag == null) existingTag = AddOrUpdate.Tag(tag);
+		//public static bool Tag_Song(Tag tag, Song song)
+		//{
+		//	var existingTag = db.Tags.Where(t => t.Name == tag.Name).SingleOrDefault();
+		//	if (existingTag == null) existingTag = AddOrUpdate.Tag(tag);
 
-			var existingSong = db.Songs.Include("Tags").Where(s => s.Title == song.Title).SingleOrDefault();
-			if (existingSong == null) existingSong = AddOrUpdate.Song(song);
+		//	var existingSong = db.Songs.Include("Tags").Where(s => s.Title == song.Title).SingleOrDefault();
+		//	if (existingSong == null) existingSong = AddOrUpdate.Song(song);
 
-			bool songHasTag = (existingSong.Tags.Where(t => t.Name == existingTag.Name).SingleOrDefault() != null);
-			if (!songHasTag)
-			{
-				existingSong.Tags.Add(existingTag);
-			}
-			db.SaveChanges();
+		//	bool songHasTag = (existingSong.Tags.Where(t => t.Name == existingTag.Name).SingleOrDefault() != null);
+		//	if (!songHasTag)
+		//	{
+		//		existingSong.Tags.Add(existingTag);
+		//	}
+		//	db.SaveChanges();
 
-			return true;
-		}
+		//	return true;
+		//}
 
-		public static bool Genre_Song(Genre genre, Song song)
-		{
-			var existingGenre = db.Genres.Where(t => t.Name == genre.Name).SingleOrDefault();
-			if (existingGenre == null) existingGenre = AddOrUpdate.Genre(genre);
+		//public static bool Genre_Song(Genre genre, Song song)
+		//{
+		//	var existingGenre = db.Genres.Where(t => t.Name == genre.Name).SingleOrDefault();
+		//	if (existingGenre == null) existingGenre = AddOrUpdate.Genre(genre);
 
-			var existingSong = db.Songs.Include("Genres").Where(s => s.Title == song.Title).SingleOrDefault();
-			if (existingSong == null) existingSong = AddOrUpdate.Song(song);
+		//	var existingSong = db.Songs.Include("Genres").Where(s => s.Title == song.Title).SingleOrDefault();
+		//	if (existingSong == null) existingSong = AddOrUpdate.Song(song);
 
-			bool songHasGenre = (existingSong.Genres.Where(t => t.Name == existingGenre.Name).SingleOrDefault() != null);
-			if (!songHasGenre)
-			{
-				existingSong.Genres.Add(existingGenre);
-			}
-			db.SaveChanges();
-			return true;
-		}
+		//	bool songHasGenre = (existingSong.Genres.Where(t => t.Name == existingGenre.Name).SingleOrDefault() != null);
+		//	if (!songHasGenre)
+		//	{
+		//		existingSong.Genres.Add(existingGenre);
+		//	}
+		//	db.SaveChanges();
+		//	return true;
+		//}
 		#endregion
 	}
 }

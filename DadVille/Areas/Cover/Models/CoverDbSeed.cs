@@ -16,24 +16,24 @@ namespace DadVille.Areas.Cover.Models.Migrations
 		private static CoverDbContext db = new CoverDbContext();
 		protected override void Seed(DadVille.Areas.Cover.Models.CoverDbContext context)
 		{
-			SeedTag();
-			SeedSong();
-			SeedSongTag();
-			SeedArtist();
+			//SeedTag();
+			//SeedSong();
+			//SeedSongTag();
+			//SeedArtist();
 
 
 		}
 
 		public static void Seed_Startup()
 		{
-			SeedTag();
-			SeedSong();
-			SeedSongTag();
-			SeedArtist();
-			SeedGenre();
-			SeedSongGenre();
-			AssignArtistToSong();
-			AssignNewGenreNewSongNewTag();
+			//SeedTag();
+			//SeedSong();
+			//SeedSongTag();
+			//SeedArtist();
+			//SeedGenre();
+			//SeedSongGenre();
+			//AssignArtistToSong();
+			//AssignNewGenreNewSongNewTag();
 		}
 
 		#region Entity Assignments
@@ -47,10 +47,10 @@ namespace DadVille.Areas.Cover.Models.Migrations
 
 		public static void SeedSong()
 		{
-			var song1 = new Song { Title = "High Speed Dirt" };
-			var song2 = new Song { Title = "Boot Scootin' Boogey" };
-			AddOrUpdate.Song(song1);
-			AddOrUpdate.Song(song2);
+			//var song1 = new Song { Title = "High Speed Dirt" };
+			//var song2 = new Song { Title = "Boot Scootin' Boogey" };
+			//AddOrUpdate.Song(song1);
+			//AddOrUpdate.Song(song2);
 
 		}
 
@@ -78,27 +78,27 @@ namespace DadVille.Areas.Cover.Models.Migrations
 		#endregion
 
 		#region Many to Many Assignments
-		public static void SeedSongTag()
-		{
-			var tag = db.Tags.Include("Songs").Where(t => t.Name == "Dance").Single();
-			var song = db.Songs.Where(s => s.Title == "Boot Scootin' Boogey").Single();
-			Assign.Tag_Song(tag, song);
-		}
+		//public static void SeedSongTag()
+		//{
+		//	var tag = db.Tags.Include("Songs").Where(t => t.Name == "Dance").Single();
+		//	var song = db.Songs.Where(s => s.Title == "Boot Scootin' Boogey").Single();
+		//	Assign.Tag_Song(tag, song);
+		//}
 
-		public static void SeedSongGenre()
-		{
-			var genre = db.Genres.Include("Songs").Where(g => g.Name == "Pop Country").Single();
-			var song = db.Songs.Where(s => s.Title == "Boot Scootin' Boogey").Single();
-			Assign.Genre_Song(genre, song);
-		}
+		//public static void SeedSongGenre()
+		//{
+		//	var genre = db.Genres.Include("Songs").Where(g => g.Name == "Pop Country").Single();
+		//	var song = db.Songs.Where(s => s.Title == "Boot Scootin' Boogey").Single();
+		//	Assign.Genre_Song(genre, song);
+		//}
 
 		#endregion
 
 		#region Assign New
 		public static void AssignNewGenreNewSongNewTag()
 		{
-			var stairway = AddOrUpdate.Song(new Song { Title = "Stairway To Heaven" });
-			var x = 
+			//var stairway = AddOrUpdate.Song(new Song { Title = "Stairway To Heaven" });
+			//var x = 
 		}
 	
 		#endregion
