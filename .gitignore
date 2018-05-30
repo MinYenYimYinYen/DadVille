@@ -260,5 +260,5 @@ paket-files/
 __pycache__/
 *.pyc
 
-DadVille/Web.config
+DadVille/*.config
 
